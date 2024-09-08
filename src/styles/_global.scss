@@ -1,12 +1,13 @@
 /* global styles*/
 
 body{
-  font-family: 'Ubuntu';
+  font-family: 'Fira-Sans', ;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 800;
   font-size: 20px;
   line-height: 1.6;
-  color: rgb(22, 46, 228);
-  background-color: rgb(227, 228, 225);
+  text-transform: uppercase;
+  color: $text-color;
+  background-color: $bg-color;
 }
 
