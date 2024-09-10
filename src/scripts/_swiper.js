@@ -7,11 +7,18 @@ import Swiper from 'swiper/bundle';
 const swiper = new Swiper('.swiper', {
   // Optional parameters
   direction: 'horizontal',
-  loop: true,
+  spaceBetween: 30,
+   loop: true,
+  slidesPerView:2,
+  slidesPerGroup: 1,
+  slideToClickedSlide: true,
+  centeredSlides: true,
 
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
+    type: 'fraction',
+    clickable: true
   },
 
   // Navigation arrows
