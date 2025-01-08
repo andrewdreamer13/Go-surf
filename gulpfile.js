@@ -41,7 +41,8 @@ let isProd = false; // dev by default
 const paths = {
   html: {
     // src: 'src/**/index.html',
-    src: 'src/**/*.html',
+    // src: 'src/html/index.html',
+    src: 'src/html/**/*.html',
     dest: 'dist'
   },
   styles: {
@@ -56,7 +57,7 @@ const paths = {
   },
 
   images: {
-    src: 'src/img/**/*.{jpg,jpeg,png,gif,ico,webp,mp4,webm}',
+    src: 'src/img/**/*.{jpg,jpeg,png,gif,ico,webp,mp4,webm,webmanifest}',
     dest: 'dist/img'
   },
   svgSprites: {
@@ -235,7 +236,7 @@ const svgSprites = () => {
     .pipe(
       svgmin({
         js2svg: {
-          pretty: false,
+          pretty: true,
         },
       })
     )

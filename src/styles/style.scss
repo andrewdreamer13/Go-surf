@@ -1,13 +1,13 @@
-
-@import "font-mixin";
-@import "fonts";
-@import "reset";
-@import "preloader";
-@import "swiper";
-@import "_vars";
-@import "global";
-@import "header";
-@import "_surf.scss";
-@import "modal";
-@import "footer";
+@import "helpers/_vars";
+@import 'helpers/_functions';
+@import "helpers/_mixins";
+@import "helpers/_fonts";
+@import "general/_reset";
+@import "component/_preloader";
+@import "general/_swiper";
+@import "general/_global";
+@import "sections/_header";
+@import "sections/_surf";
+@import "component/_modal";
+@import "sections/_footer";
 

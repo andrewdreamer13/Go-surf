@@ -2,9 +2,8 @@
 import {mainPage} from './_vars';
 
 
-
 // header burger menu
-burger();
+// burger();
 
 function burger() {
 

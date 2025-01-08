@@ -19,10 +19,10 @@ console.log(now.minus({ days: 7 }).toString().slice(0, 10));
 console.log(now.startOf('day').toString());
 console.log(now.endOf('hour').toString());
 
-const time = document.querySelector('.time');
-console.log(time);
+// const time = document.querySelector('.time');
+// console.log(time);
 
-time.innerHTML = `Now is - ${now.hour}:${now.minute}`;
+// time.innerHTML = `Now is - ${now.hour}:${now.minute}`;
 
 // const now2 = new Date();
 // const date = new Intl.DateTimeFormat('ru');

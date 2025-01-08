@@ -1,0 +1,79 @@
+/* global styles*/
+
+body{
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-transform: uppercase;
+  color: $text-color;
+  background-color: $bg-color;
+}
+
+.title {
+  margin-left: -50px;
+  h2 {
+    display: inline-block;
+    position: relative;
+    font-weight: 800;
+    font-size: 200px;
+    line-height: 0.78;
+    color: rgba($text-color, 0.02);
+     
+    span {
+      display: inline-block;
+      position: absolute;
+      top: -20px;
+      right: -14px;
+      font-weight: 800;
+      font-size: 80px;
+      color:$text-color;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: -15px;
+        right: 0;
+        width: 80px;
+        height: 1px;
+        background-color: $main-color;
+      }
+    }
+  }
+}
+
+.headline-left {
+  display: inline-block;
+  position: relative;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.7;
+  letter-spacing: 7.33333px;
+  text-transform: uppercase;
+  color: rgba($text-color, .5);
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -103px;
+    top: 50%;
+    width: 80px;
+    height: 1px;
+    background-color: rgba($text-color, .5);
+  }
+}
+
+.slider-title {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: $text-color;
+}
+
+
+.no-scroll {
+  overflow: hidden;
+}
+
