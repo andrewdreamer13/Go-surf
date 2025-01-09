@@ -3,11 +3,12 @@
 @import "helpers/_mixins";
 @import "helpers/_fonts";
 @import "general/_reset";
-@import "component/_preloader";
+@import "components/_preloader";
+@import 'components/_nav';
 @import "general/_swiper";
 @import "general/_global";
 @import "sections/_header";
 @import "sections/_surf";
-@import "component/_modal";
+@import "components/_modal";
 @import "sections/_footer";
 

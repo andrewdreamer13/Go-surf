@@ -1,0 +1,56 @@
+.nav {
+  width: 100%;
+  height: 353px;
+  margin-bottom: 17px;
+
+  &__list {
+    width: 100%;
+    height: 100%;
+    @include flex-mix(space-between, center, column);
+  }
+
+  &__item {
+    width: 100%;
+  }
+
+  &__link {
+    width: 100%;
+    @include flex-mix(space-between, center, column, 6);
+
+    &:hover {
+      background-color: $main-color;
+      transition: all 0.3s;
+    }
+  }
+
+  &__svg {
+    //  fill: none;
+    //  stroke: $text-color;
+    //  stroke-width: 1.5;
+    &:nth-child(1) {
+      width: 61px;
+      height: 48px;
+    }
+    &:nth-child(2) {
+      width: 52px;
+      height: 33px;
+    }
+    &:nth-child(3) {
+      width: 47px;
+      height: 49px;
+    }
+    &:nth-child4(4) {
+      width: 25px;
+      height: 52px;
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: 0.25em;
+    text-align: center;
+    text-transform: capitalize;
+  }
+}

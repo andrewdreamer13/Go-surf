@@ -13,6 +13,22 @@ const headerSlider = new Swiper(".header__slider", {
   centeredSlides: true,
   parallax: true,
   speed: 1000,
+  // effect: "fade",
+  effect: "creative",
+  creativeEffect: {
+    prev: {
+      shadow: true,
+      translate: ["-120%", 0, -500],
+    },
+    next: {
+      shadow: true,
+      translate: ["120%", 0, -500],
+    },
+  },
+  
+  fadeEffect: {
+    crossFade: true,
+  },
 
   pagination: {
     el: ".header__pagination",
@@ -38,7 +54,6 @@ const headerSlider = new Swiper(".header__slider", {
   //   //   },
 });
 
-
 // headerSlider.init();
 
 // headerSlider.on("paginationRender", function () {
@@ -50,7 +65,7 @@ const headerSlider = new Swiper(".header__slider", {
 //       mapRoads.forEach((road, index) => {
 //         if (index == bulletIndex) {
 //           // road.classList.add('road-active')
-          
+
 //           //  // customFunction(road);
 //         }
 //       });

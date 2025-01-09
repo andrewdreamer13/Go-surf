@@ -191,6 +191,20 @@
     text-transform: capitalize;
   }
 
+  &__title {
+    position: absolute;
+    top: 0;
+    left: -20px;
+    z-index: 2;
+    span {
+      display: block;
+      font-weight: 800;
+      font-size: 200px;
+      line-height: 0.78;
+      color: rgba($text-color, 0.07);
+    }
+  }
+
   &__aside {
     position: absolute;
     top: 0;
@@ -208,9 +222,10 @@
     height: 258px;
     text-align: center;
     padding-top: 22px;
+    margin-bottom: 139px;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -226,6 +241,102 @@
       height: 258px;
       fill: $text-color;
     }
+  }
+
+  &__search {
+    width: 100%;
+    height: 73px;
+    margin-bottom: 7px;
+    background-color: transparent;
+
+    &:hover {
+      background-color: $main-color;
+      transition: all 0.3s;
+    }
+  }
+
+  &__search-svg {
+    width: 31px;
+    height: 31px;
+    fill: $text-color;
+  }
+
+  &__date {
+    margin-bottom: 25px;
+    @include flex-mix(space-between, center, column);
+  }
+
+  &__date-day {
+    font-size: 72px;
+    line-height: 0.88889;
+  }
+
+  &__date-box {
+  }
+
+  &__date-month {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.1875;
+    letter-spacing: 0.09em;
+    text-transform: lowercase;
+  }
+
+  &__date-devide {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.1875;
+    text-transform: lowercase;
+  }
+
+  &__date-year {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.1875;
+    letter-spacing: 0.09em;
+    text-transform: lowercase;
+  }
+
+  &__place {
+    width: 100%;
+    @include flex-mix(center, center, row, 9);
+  }
+
+  &__place-name {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 1.6;
+    letter-spacing: 1.05px;
+    text-transform: capitalize;
+  }
+
+  &__marker-svg {
+    width: 11px;
+    height: 13px;
+    // stroke: $text-color;
+    fill: $text-color;
+  }
+
+  &__scroll-arrow {
+    display: inline-block;
+    position: absolute;
+    bottom: 41px;
+    // width: 20px;
+    // height: 24px;
+    left: 205px;
+    padding: 10px;
+    z-index: 2;
+
+    animation-name: moving;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.48, 0.62, 0.58, 1);
+    animation-iteration-count: infinite;
+  }
+
+  &__scroll-svg {
+    width: 22px;
+    height: 24px;
   }
 
   .slider-arrow {
@@ -272,6 +383,24 @@
   @keyframes road-start {
     to {
       stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes moving {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(15px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    75% {
+      transform: translateY(8px);
+    }
+    100% {
+      transform: translateY(0);
     }
   }
 
