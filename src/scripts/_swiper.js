@@ -1,7 +1,9 @@
 // import Swiper bundle with all modules installed
 import Swiper from "swiper/bundle";
 
-const shores = ["North Shore", "South Shore", "West Shore", "East Shore"];
+const shoresLong = ["North Shore", "South Shore", "West Shore", "East Shore"];
+const shoresShort = ["North", "South", "West", "East"];
+const shoresText =  window.innerWidth >= 650 ? shoresLong : shoresShort;
 
 const headerSlider = new Swiper(".header__slider", {
   direction: "horizontal",
@@ -25,10 +27,10 @@ const headerSlider = new Swiper(".header__slider", {
       translate: ["120%", 0, -500],
     },
   },
-  
-  fadeEffect: {
-    crossFade: true,
-  },
+
+  // fadeEffect: {
+  //   crossFade: true,
+  // },
 
   pagination: {
     el: ".header__pagination",
@@ -37,7 +39,7 @@ const headerSlider = new Swiper(".header__slider", {
       return `
       <span class="${className}" data-index="${index}">
       <span class="header__pagination-number">0${index + 1}</span>
-      <span class="header__pagination-shore">${shores[index]}</span>
+      <span class="header__pagination-shore">${shoresText[index]}</span>
       </span>
     `;
     },
@@ -48,11 +50,36 @@ const headerSlider = new Swiper(".header__slider", {
     prevEl: ".header__slider-prev",
   },
 
-  //   // And if we need scrollbar
-  //   //   scrollbar: {
-  //   //     el: '.swiper-scrollbar',
-  //   //   },
+  // breakpoints: {
+  //   650: {
+  //     renderBullet: function (index, className) {
+  //       return `
+  //       <span class="${className}" data-index="${index}">
+  //       <span class="header__pagination-number">0${index + 1}</span>
+  //       <span class="header__pagination-shore">${shoresLong[index]}</span>
+  //       </span>
+  //     `;
+  //     },
+  //   },
+  // },
 });
+
+
+
+
+// headerSlider.on("breakpoint", function (swiper, breakpointParams) {
+//   const bullets = document.querySelectorAll(".swiper-pagination-bullet");
+//   bullets.forEach((bullet, index) => {
+//     const shoreText =
+//       window.innerWidth >= 650 ? shoresLong[index] : shoresShort[index];
+//      bullet.innerHTML = `
+//          <span class="${className}" data-index="${index}">
+//          <span class="header__pagination-number">0${index + 1}</span>
+//          <span class="header__pagination-shore">${shoreText[index]}</span>
+//          </span>
+//         `;
+//   });
+//});
 
 // headerSlider.init();
 

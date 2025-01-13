@@ -15,18 +15,27 @@
 
   &__link {
     width: 100%;
+    transition: all 0.3s;
     @include flex-mix(space-between, center, column, 6);
 
     &:hover {
       background-color: $main-color;
+      // filter: drop-shadow(2px 2px 2px 2px red);
       transition: all 0.3s;
+      // translate: 50% 0 0;
     }
+    // &:hover .nav__svg {
+    //   transform-origin: center;
+    //    scale:1.2;
+    //   translate: 5px -5px 1000px;
+    //   transition: all 0.3s;
+     
+    // }
   }
 
   &__svg {
-    //  fill: none;
-    //  stroke: $text-color;
-    //  stroke-width: 1.5;
+    // fill: $text-color;
+    transition: all 0.3s;
     &:nth-child(1) {
       width: 61px;
       height: 48px;
@@ -52,5 +61,54 @@
     letter-spacing: 0.25em;
     text-align: center;
     text-transform: capitalize;
+  }
+}
+
+@media (max-width:650px) {
+  .nav {
+    &__svg {
+    
+      &:nth-child(1) {
+        width: 51px;
+        height: 48px;
+      }
+      &:nth-child(2) {
+        width: 42px;
+        height: 33px;
+      }
+      &:nth-child(3) {
+        width: 37px;
+        height: 49px;
+      }
+      &:nth-child4(4) {
+        width: 15px;
+        height: 52px;
+      }
+    }
+  }
+}
+
+@media (max-width:480px) {
+  .nav {
+    height: 300px;
+    &__svg {
+    
+      &:nth-child(1) {
+        width: 41px;
+        height: 38px;
+      }
+      &:nth-child(2) {
+        width: 22px;
+        height: 33px;
+      }
+      &:nth-child(3) {
+        width: 27px;
+        height: 39px;
+      }
+      &:nth-child4(4) {
+        width: 15px;
+        height: 42px;
+      }
+    }
   }
 }

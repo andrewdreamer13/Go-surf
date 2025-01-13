@@ -6,11 +6,21 @@ function addZero(d) {
 
 const today = new Date();
 
-const displayDay = document.querySelector('.header__date-day');
-const displayMonth = document.querySelector('.header__date-month');
-const displayYear = document.querySelector('.header__date-year');
+const displayDays = document.querySelectorAll('.header__date-day');
+const displayMonths = document.querySelectorAll('.header__date-month');
+const displayYears = document.querySelectorAll('.header__date-year');
 
 
-displayDay.innerHTML = addZero(today.getDate());
-displayMonth.innerHTML = addZero(today.getMonth() + 1);
-displayYear.innerHTML = addZero(today.getFullYear());
+displayDays.forEach((day) => {
+  day.innerHTML = addZero(today.getDate());
+})
+
+displayMonths.forEach((month) => {
+  month.innerHTML = addZero(today.getMonth() + 1);
+})
+
+displayYears.forEach((year) => {
+  year.innerHTML = addZero(today.getFullYear());
+})
+
+

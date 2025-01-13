@@ -4,20 +4,22 @@ body{
   font-family: $font-family;
   font-style: normal;
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.6;
   text-transform: uppercase;
   color: $text-color;
   background-color: $bg-color;
+  overflow-x: hidden;
 }
 
 .title {
-  margin-left: -50px;
+  // margin-left: -50px;
+  margin-left: -4.034%;
   h2 {
     display: inline-block;
     position: relative;
     font-weight: 800;
-    font-size: 200px;
+    font-size: clamp(100px, 3.3088rem + 14.7059vw, 200px);
     line-height: 0.78;
     color: rgba($text-color, 0.02);
      
@@ -47,7 +49,7 @@ body{
   display: inline-block;
   position: relative;
   font-weight: 400;
-  font-size: 22px;
+  font-size: clamp(16px, 0.8235rem + 0.8824vw, 22px);
   line-height: 1.7;
   letter-spacing: 7.33333px;
   text-transform: uppercase;
@@ -58,7 +60,8 @@ body{
     position: absolute;
     left: -103px;
     top: 50%;
-    width: 80px;
+    // width: 80px;
+    width: clamp(50px, 2.2426rem + 4.4118vw, 80px);
     height: 1px;
     background-color: rgba($text-color, .5);
   }
@@ -66,7 +69,7 @@ body{
 
 .slider-title {
   font-weight: 800;
-  font-size: 40px;
+  font-size: clamp(24px, 1.1735rem + 1.6327vw, 40px);
   line-height: 1.5;
   text-transform: uppercase;
   color: $text-color;
@@ -77,3 +80,41 @@ body{
   overflow: hidden;
 }
 
+@media (min-width:1440px) {
+  .title {
+    margin-left: -50px;
+  }
+}
+
+@media (max-width:1000px) {
+  .headline-left {
+  
+    &::before {
+      content: '';
+      left: -83px;
+    }
+  }
+}
+
+@media (max-width:768px) {
+  .headline-left {
+  
+    &::before {
+      content: '';
+      left: -73px;
+    }
+  }
+}
+
+@media (max-width:480px) {
+  .headline-left {
+  
+    &::before {
+      content: '';
+      left: -63px;
+    }
+  }
+}
+@media (max-width:390px) {
+ 
+}
