@@ -1,4 +1,4 @@
-/* burger */
+
 import {mainPage} from './_vars';
 
 
@@ -7,10 +7,6 @@ const mapNorth = document.querySelector('.map-north');
 window.addEventListener('load', () => {
   mapNorth.classList.add('map-visible');
 })
-
-
-
-
 
 
 // header burger menu
@@ -55,8 +51,5 @@ function burger() {
   });
 
 } // End of burger
-
-
-
 
 

@@ -3,8 +3,8 @@
 .header {
   position: relative;
   width: 100%;
-  height: 1024px;
-//  @include flex-mix(flex-end, flex-end, column);
+  height: 100dvh;
+  // min-height: 1024px;
 
   &__slider {
     position: absolute;
@@ -17,8 +17,8 @@
   &__slide {
     position: relative;
     width: 100%;
-    height: 1024px;
-    // aspect-ratio: 1.4 / 1;
+    height: 100dvh;
+    // min-height: 1024px;
     background-color: $bg-color;
     background-size: cover;
     background-position: center center;
@@ -230,7 +230,7 @@
     height: 258px;
     text-align: center;
     padding-top: 22px;
-    margin-bottom: 139px;
+    margin-bottom: 90px;
 
     &::before {
       content: "";

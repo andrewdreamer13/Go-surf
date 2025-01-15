@@ -20,17 +20,9 @@
 
     &:hover {
       background-color: $main-color;
-      // filter: drop-shadow(2px 2px 2px 2px red);
       transition: all 0.3s;
-      // translate: 50% 0 0;
     }
-    // &:hover .nav__svg {
-    //   transform-origin: center;
-    //    scale:1.2;
-    //   translate: 5px -5px 1000px;
-    //   transition: all 0.3s;
-     
-    // }
+
   }
 
   &__svg {
