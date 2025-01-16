@@ -15,11 +15,12 @@ body{
 .title {
   // margin-left: -50px;
   margin-left: -4.034%;
+  // border: 1px solid red;
   h2 {
     display: inline-block;
     position: relative;
     font-weight: 800;
-    font-size: clamp(100px, 3.3088rem + 14.7059vw, 200px);
+    font-size: clamp(75px, 1.4824rem + 16.0256vw, 200px);
     line-height: 0.78;
     color: rgba($text-color, 0.02);
      
@@ -27,17 +28,19 @@ body{
       display: inline-block;
       position: absolute;
       top: -20px;
-      right: -14px;
+      // right: -14px;
+      top: -11%;
+      right: -3%;
       font-weight: 800;
-      font-size: 80px;
+      font-size: clamp(30px, 0.5929rem + 6.4103vw, 80px);
       color:$text-color;
 
       &::after {
         content: '';
         position: absolute;
-        top: -15px;
+        top: -24%;
         right: 0;
-        width: 80px;
+        width: 42%;
         height: 1px;
         background-color: $main-color;
       }
@@ -49,9 +52,9 @@ body{
   display: inline-block;
   position: relative;
   font-weight: 400;
-  font-size: clamp(16px, 0.8235rem + 0.8824vw, 22px);
+  font-size: clamp(12px, 0.5714rem + 0.8929vw, 22px);
   line-height: 1.7;
-  letter-spacing: 7.33333px;
+  letter-spacing: clamp(2px, 0.0298rem + 0.4759vw, 7.33px);
   text-transform: uppercase;
   color: rgba($text-color, .5);
 
@@ -69,7 +72,8 @@ body{
 
 .slider-title {
   font-weight: 800;
-  font-size: clamp(24px, 1.1735rem + 1.6327vw, 40px);
+  font-size: clamp(16px, 0.5714rem + 2.1429vw, 40px);
+  letter-spacing: .8px;
   line-height: 1.5;
   text-transform: uppercase;
   color: $text-color;

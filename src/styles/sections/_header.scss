@@ -49,7 +49,7 @@
 
   &__slide-content {
     position: absolute;
-    right: 58px;
+    right: 77px;
     bottom: 87px;
     text-align: right;
     max-width: 520px;
@@ -58,6 +58,7 @@
 
   &__slide-subtitle {
     margin-bottom: 10px;
+    font-size: clamp(16px, 0.8235rem + 0.8824vw, 22px);
   }
 
   &__slide-title {
@@ -73,6 +74,7 @@
   }
 
   &__slide-text {
+    font-size: clamp(24px, 1.1735rem + 1.6327vw, 40px);
     margin-bottom: 20px;
   }
 
@@ -98,7 +100,7 @@
   &__slider-control {
     position: absolute;
     top: 38px;
-    right: 62px;
+    right: 77px;
     z-index: 100;
     width: 78px;
     height: 30px;
@@ -132,7 +134,7 @@
   .swiper-pagination {
     position: absolute;
     left: auto;
-    right: 67px;
+    right: 82px;
     bottom: 22px;
     width: 100%;
     max-width: 920px;
