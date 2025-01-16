@@ -1,0 +1,89 @@
+.weather-forcast {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50% 0;
+  width: 100%;
+  max-width: 283px;
+  // height: 216px;
+  padding:28px 32px;
+  border-radius: 6px;
+  background-color: $weather-bg;
+  @include flex-mix(space-between, center, column, 20);
+
+  &__names {
+    width: 100%;
+    height: 71px;
+    @include flex-mix(space-between, flex-start, row);
+  }
+
+  &__names-box {
+  }
+
+  &__shore {
+    position: relative;
+    margin-bottom: 16px;
+    font-weight: 800;
+    font-size: 18px;
+  //  line-height: 1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 80px;
+      height: 1px;
+      background-color: $main-color;
+    }
+  }
+
+  &__country {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.1875;
+    text-transform: capitalize;
+  }
+
+  &__link {
+    // border:1px solid red;
+    // padding: 5px 8px;
+  }
+
+  &__svg {
+    fill: $text-color;
+    transition: all .3s;
+
+    .weather-forcast__link:hover & {
+      fill: $main-color;
+    }
+   
+  }
+
+  &__data {
+    width: 100%;
+    padding: 0 8px;
+    @include flex-mix(space-between, center, row);
+  }
+
+  &__item {
+    @include flex-mix(center, center, column, 5);
+  }
+
+  &__item-svg {
+    fill: $main-color;
+  }
+
+  &__item-numbers {
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 1.4375;
+    text-transform:lowercase
+  }
+
+  &__item-names {
+    font-size: 10px;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+}
