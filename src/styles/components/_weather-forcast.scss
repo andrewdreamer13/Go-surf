@@ -1,17 +1,20 @@
 .weather-forcast {
   
-  position: absolute;
-  top: 100%;
-  left: 50%;
-   translate: -50% -70% 0;
   width: 100%;
   max-width: 283px;
   padding:28px 32px;
   border-radius: 6px;
   background-color: $weather-bg;
   z-index: 10;
+  opacity: 0;
   @include flex-mix(space-between, center, column, 20);
   
+  &-visible {
+    opacity: 1;
+    
+    transition: opacity 1s;
+    transition-delay: 0.3s;
+  }
   &__names {
     width: 100%;
     height: 71px;
@@ -95,15 +98,14 @@
 
 @media (max-width: 1024px) {
   .weather-forcast {
-    padding:18px 22px;
-    border-radius: 5px;
+    padding:10px 12px;
+    max-width: 234px;
   }
 }
 
 @media (max-width: 768px) {
   .weather-forcast {
     padding:10px 12px;
-    border-radius: 6px;
   }
 }
 

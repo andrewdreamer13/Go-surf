@@ -57,7 +57,7 @@ const paths = {
   },
 
   images: {
-    src: 'src/img/**/*.{jpg,jpeg,png,gif,ico,webp,mp4,webm,webmanifest}',
+    src: 'src/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp,mp4,webm,webmanifest}',
     dest: 'dist/img'
   },
   svgSprites: {
