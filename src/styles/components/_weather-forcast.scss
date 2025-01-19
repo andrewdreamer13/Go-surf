@@ -106,24 +106,31 @@
 @media (max-width: 768px) {
   .weather-forcast {
     padding:10px 12px;
+    max-width: 210px;
+    gap: 10px;
+
+    &__names {
+      height: 52px;
+    }
+
+    &__shore {
+      margin-bottom: 8px;
+      font-size: 16px;
+  
+      &::after {
+        content: "";
+        bottom: -3px;
+        width: 70px;
+      }
+  }
+  
   }
 }
 
 @media (max-width: 480px) {
   .weather-forcast {
-   max-width: 250px;
-   gap: 15px;
 
-   &__shore {
-    margin-bottom: 8px;
-    font-size: 16px;
-
-    &::after {
-      content: "";
-      bottom: -3px;
-      width: 70px;
-    }
-}
+   
   }
 
 }
