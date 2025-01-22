@@ -33,7 +33,6 @@
     position: relative;
     width: 100%;
     aspect-ratio: 1.94 / 1;
-   
   }
 
   &__map-svg-box {
@@ -51,7 +50,6 @@
   }
 
   &__map-svg {
-    
     width: 100%;
     max-width: 1233px;
     aspect-ratio: 1.94 / 1;
@@ -80,7 +78,6 @@
     }
   }
   &__map-dot-svg {
-   
   }
 
   &__map-coordinates {
@@ -96,6 +93,157 @@
     writing-mode: vertical-lr;
     rotate: 180deg;
   }
+
+  &__slider-control {
+    top: 0;
+    right: 77px;
+  }
+
+  &__slider {
+    width: 100%;
+    height: 890px;
+    height: clamp(600px, 30.0641rem + 37.1795vw, 890px);
+    padding-top: 53px;
+    border: 1px solid red;
+    .swiper-wrapper {
+      //min-width: 100%;
+      // aspect-ratio: 1.87 / 1
+
+      .swiper-slide {
+        position: relative;
+        width: 100% !important;
+        // max-width: 400px;
+        max-width: clamp(260px, 13.0682rem + 15.9091vw, 400px);
+        aspect-ratio: 1 / 1.87;
+        flex-shrink: 1;
+        // max-height: 750px;
+        transition: all 0.5s;
+
+        &-active {
+          margin-right: -20px;
+          // z-index: 2;
+          transition: all 0.7s;
+
+          .surf__card {
+            background-size: 100%;
+            transition: all 0.7s;
+          }
+
+          .surf__card::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            z-index: -1;
+            transition: all 0.7s;
+          }
+
+          .surf__card-subtitle-text {
+            text-shadow: 2px -2px 2px $bg-color;
+          }
+
+          .surf__card-link {
+            translate: 0 0 0;
+            opacity: 1;
+            transition: all 0.7s;
+          }
+        }
+
+        &-prev {
+          margin-top: 32px;
+          margin-right: -20px;
+        }
+        &-next {
+          margin-right: -20px;
+          margin-top: 89px;
+        }
+      }
+    }
+  }
+
+  &__slider-track {
+    //  min-width: 100%;
+    //  aspect-ratio: 1.9 / 1;
+    //border: 1px solid green;
+  }
+
+  &__card {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    max-width: clamp(260px, 13.0682rem + 15.9091vw, 400px);
+    aspect-ratio: 1 / 1.87;
+    background-size: 200%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow-y: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(28, 33, 33, 0.85);
+      z-index: 1;
+    }
+  }
+
+  &__card-title {
+    position: absolute;
+    //  top: 72px;
+    top: clamp(45px, 2.1989rem + 3.0682vw, 72px);
+    // left: 40px;
+    left: clamp(30px, 1.6477rem + 1.1364vw, 40px);
+    z-index: 2;
+  }
+
+  &__card-title-text {
+    display: block;
+    font-weight: 800;
+    // font-size: 40px;
+    font-size: clamp(25px, 1.2216rem + 1.7045vw, 40px);
+    line-height: 0.9;
+  }
+
+  &__card-subtitle {
+    position: absolute;
+    // left: 38px;
+    left: clamp(20px, 0.8409rem + 2.0455vw, 38px);
+    bottom: 80px;
+    writing-mode: vertical-rl;
+    rotate: 180deg;
+    z-index: 2;
+  }
+
+  &__card-subtitle-text {
+    font-weight: 400;
+    // font-size: 18px;
+    font-size: clamp(14px, 0.7841rem + 0.4545vw, 18px);
+    line-height: 1.22222;
+    letter-spacing: clamp(2px, 0rem + 0.625vw, 7.5px);
+  }
+
+  &__card-subtitle-devider {
+    color: rgba($text-color, 0.3);
+    margin: 15px 0;
+  }
+
+  &__card-link {
+    bottom: 0;
+    // left: 45px;
+    left: clamp(25px, 1.108rem + 2.2727vw, 45px);
+    translate: -200px 0 0;
+    opacity: 0;
+    transition: all 0.5s;
+  }
+}
+
+.swiper {
 }
 
 .map {
@@ -131,7 +279,7 @@
     }
 
     &__map-svg-track {
-      max-width:100%;
+      max-width: 100%;
       width: 100%;
     }
 
@@ -144,6 +292,22 @@
       right: 3%;
       top: 50%;
       translate: 0 -50% 0;
+    }
+
+    &__slider {
+      height: 990px;
+
+      .swiper-wrapper {
+        //min-width: 100%;
+        // aspect-ratio: 1.87 / 1
+
+        .swiper-slide {
+          max-width: 450px;
+        }
+      }
+    }
+    &__card {
+      max-width: 450px;
     }
   }
 }
@@ -160,8 +324,7 @@
     }
 
     &__map-svg-track {
-      max-width:100%;
-      
+      max-width: 100%;
     }
 
     &__map-svg {
@@ -209,6 +372,32 @@
     &__map-coordinates {
       right: 1.5%;
     }
+
+    &__slider {
+      .swiper-wrapper {
+        .swiper-slide {
+          &-active {
+            margin-right: -15px;
+          }
+
+          &-prev {
+            margin-top: 32px;
+            margin-right: -15px;
+          }
+          &-next {
+            margin-right: -15px;
+            margin-top: 45px;
+          }
+        }
+      }
+    }
+    &__slider-control {
+      top: 15px;
+      right: 40px;
+    }
+    &__card-subtitle-devider {
+      margin: 8px 0;
+    }
   }
 }
 
@@ -216,7 +405,6 @@
   .surf {
     &__map {
       // padding: 0 26px 26px 26px;
-     
     }
 
     &__map-svg-box {
@@ -238,7 +426,6 @@
         background: $main-color;
         border-radius: 1px;
       }
-     
     }
 
     &__map-svg-track {

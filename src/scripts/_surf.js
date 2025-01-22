@@ -1,11 +1,31 @@
 import { beaches } from "./data.js";
+import Swiper from "swiper/bundle";
+
+const surfSlider = new Swiper(".surf__slider", {
+  spaceBetween: 0,
+  loop: true,
+  slidesPerView: 'auto',
+  // slideActiveClass: 2,
+  //
+  initialSlide: 6,
+  // slideToClickedSlide: true,
+  centeredSlides: true,
+  // parallax: true,
+  speed: 700,
+
+  // pagination: {
+  //   el: ".header__pagination",
+  //   clickable: true,
+  // },
+
+  navigation: {
+    nextEl: ".surf__slider-next",
+    prevEl: ".surf__slider-prev",
+  },
+});
 
 const map = document.querySelector(".surf__map-svg-track");
-// console.log(window.offsetHeight);
-
-
 const dots = document.querySelectorAll(".surf__map .surf__map-dot");
-// const sliderItems = document.querySelectorAll(".surf__slider-item");
 const weatherPopup = document.createElement("div");
 weatherPopup.classList.add("weather-forcast");
 
@@ -48,15 +68,15 @@ function getStartPopupPosition() {
         </div>
     `;
   map.prepend(weatherPopup);
-  const startDot = map.querySelector('[data-path="seven"]');
+  const startDot = map.querySelector('[data-path="6"]');
   const startDotRec = startDot.getBoundingClientRect();
   const popupRect = weatherPopup.getBoundingClientRect();
   const mapRect = map.getBoundingClientRect();
   const popupWidth = popupRect.width;
   const popupHeight = popupRect.height;
-  console.log(popupHeight, popupWidth); // result 0 0  must be 217 283
 
-  let left = startDotRec.left + startDotRec.width / 2 - popupWidth / 2 - mapRect.left;
+  let left =
+    startDotRec.left + startDotRec.width / 2 - popupWidth / 2 - mapRect.left;
   let top = startDotRec.top - popupHeight * 2 - 10 - mapRect.top;
   weatherPopup.style.position = "absolute";
   weatherPopup.style.left = `${left}px`;
@@ -69,13 +89,12 @@ getStartPopupPosition();
 function getCurrentPopupPosition(dot) {
   const popupRect = weatherPopup.getBoundingClientRect();
   const mapRect = map.getBoundingClientRect();
-  const dotRect = dot.getBoundingClientRect();
+    const dotRect = dot.getBoundingClientRect();
   const popupWidth = popupRect.width;
   const popupHeight = popupRect.height;
   let left = dotRect.left + dotRect.width / 2 - popupWidth / 2 - mapRect.left;
   let top = dotRect.top - popupHeight - 10 - mapRect.top;
-  console.log(mapRect.width);
-  
+
   if (left + popupWidth > mapRect.width) {
     left = mapRect.width - popupWidth;
   }
@@ -83,24 +102,30 @@ function getCurrentPopupPosition(dot) {
     left = 0;
   }
 
-  if (top < 0) {
-     top = 0;
+  if (top < 0 && window.innerWidth <= 768) {
+    top = 0;
   }
+
 
   weatherPopup.style.position = "absolute";
   weatherPopup.style.left = `${left}px`;
   weatherPopup.style.top = `${top}px`;
+
 }
 
-dots.forEach((dot, index) => {
-  dot.addEventListener("click", (event) => {
-    event.preventDefault();
-    let dataPath = dot.getAttribute("data-path");
-    removeActiveClass();
-    beaches.forEach((beach) => {
-      if (dataPath == beach.id) {
-        weatherPopup.innerHTML = `
+function renderPopup() {
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", (event) => {
+      event.preventDefault();
 
+      let dataPath = dot.getAttribute("data-path");
+      surfSlider.slideToLoop(parseInt(dataPath), 700);
+      removeActiveClass();
+
+      beaches.forEach((beach) => {
+        if (beach.id == dataPath) {
+          weatherPopup.innerHTML = `
+  
         <div class="weather-forcast__names">
               <div class="weather-forcast__names-box">
                 <h4 class="weather-forcast__shore">${beach.beach}</h4>
@@ -136,13 +161,22 @@ dots.forEach((dot, index) => {
                 <div class="weather-forcast__item-names">Wind (KTS)</div>
               </div>
           `;
-        map.prepend(weatherPopup);
-      }
-    });
+          map.prepend(weatherPopup);
+        }
+      });
 
-    getCurrentPopupPosition(dot);
-    addActiveClass();
+      getCurrentPopupPosition(dot);
+      addActiveClass();
+    });
   });
+}
+renderPopup();
+
+surfSlider.on("slideChange", () => {
+  const currentIndex = surfSlider.realIndex;
+
+  // console.log(currentIndex);
+  
 });
 
 function addActiveClass() {
@@ -153,32 +187,4 @@ function removeActiveClass() {
   weatherPopup.classList.remove("weather-forcast-visible");
 }
 
-// async function getPopupData() {
-//   let response = await fetch(`data.json`, { method: "GET" });
-//   let data = await response.json();
-//   data.forEach((item) => {
-//     if (item.id == dataId) {
-//       popupInner.innerHTML = `
-//       <h2 class="popup__capital"> ${item.capital}</h2>
-//       <img class="popup__img" src="${item.src}" alt="${item.alt}">
-//      `;
-//       addActiveClass();
-//     }
-//   });
-// }
 
-// getPopupData();
-
-// function fetchWeatherData(lat, lon) {
-//   const apiKey = "YOUR_API_KEY";
-//   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-//   return fetch(url)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       // Преобразуем данные в удобный формат
-//       return {
-//         temperature: data.main.temp,
-//         wind: data.wind.speed,
-//         // ... другие данные ...
-//       };
-//     });}

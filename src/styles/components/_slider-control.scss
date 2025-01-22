@@ -1,0 +1,38 @@
+
+.slider-control {
+  position: absolute;
+  z-index: 100;
+  width: 78px;
+  height: 30px;
+  @include flex-mix(space-between, center, row);
+
+  &__slider-prev {
+    width: 29px;
+    height: 30px;
+    position: relative;
+    z-index: 100;
+
+    &:hover .slider-control__arrow-svg {
+      fill: $main-color;
+      transition: all 0.3s;
+    }
+  }
+
+  &__arrow-svg {
+    width: 24px;
+    height: 20px;
+    fill:rgba($text-color, 0.5)
+  }
+
+  &__slider-next {
+    width: 29px;
+    height: 30px;
+    position: relative;
+    z-index: 100;
+
+    &:hover .slider-control__arrow-svg {
+      fill: $main-color;
+      transition: all 0.3s;
+    }
+  }
+}

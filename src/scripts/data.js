@@ -2,47 +2,47 @@ export const beaches = [
   {
     country: 'california',
     beach: 'malibu beach',
-    id: 'one' 
+    id: 0 
   },
   {
     country: 'australia',
     beach: 'airlie beach',
-    id: 'two' 
+    id: 1 
   },
   {
     country: 'japan',
     beach: 'Isonoura beach',
-    id: 'three' 
+    id: 2 
   },
   {
     country: 'france',
     beach: 'hossegor beach',
-    id: 'four' 
+    id: 3 
   },
   {
     country: 'India',
     beach: 'mulki beach',
-    id: 'five' 
+    id: 4 
   },
   {
     country: 'south africa',
     beach: 'coffee bay',
-    id: 'six' 
+    id: 5 
   },
   {
     country: 'brazil',
     beach: 'joaquina beach',
-    id: 'seven' 
+    id: 6 
   },
   {
     country: 'puerto rico',
     beach: 'domes beach',
-    id: 'eight' 
+    id: 7 
   },
   {
     country: 'hawaii',
     beach: 'sandy beach',
-    id: 'nine' 
+    id: 8 
   },
   
 ] 

@@ -15,18 +15,18 @@ const headerSlider = new Swiper(".header__slider", {
   centeredSlides: true,
   parallax: true,
   speed: 1000,
-  // effect: "fade",
-  effect: "creative",
-  creativeEffect: {
-    prev: {
-      shadow: true,
-      translate: ["-120%", 0, -500],
-    },
-    next: {
-      shadow: true,
-      translate: ["120%", 0, -500],
-    },
-  },
+   effect: "fade",
+  // effect: "creative",
+  // creativeEffect: {
+  //   prev: {
+  //     shadow: true,
+  //     translate: ["-120%", 0, -500],
+  //   },
+  //   next: {
+  //     shadow: true,
+  //     translate: ["120%", 0, -500],
+  //   },
+  // },
 
   // fadeEffect: {
   //   crossFade: true,
@@ -50,18 +50,6 @@ const headerSlider = new Swiper(".header__slider", {
     prevEl: ".header__slider-prev",
   },
 
-  // breakpoints: {
-  //   650: {
-  //     renderBullet: function (index, className) {
-  //       return `
-  //       <span class="${className}" data-index="${index}">
-  //       <span class="header__pagination-number">0${index + 1}</span>
-  //       <span class="header__pagination-shore">${shoresLong[index]}</span>
-  //       </span>
-  //     `;
-  //     },
-  //   },
-  // },
 });
 
 
