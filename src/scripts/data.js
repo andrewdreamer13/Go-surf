@@ -20,7 +20,7 @@ export const beaches = [
     id: 3 
   },
   {
-    country: 'India',
+    country: 'india',
     beach: 'mulki beach',
     id: 4 
   },

@@ -1,12 +1,13 @@
 import Swiper from "swiper/bundle";
-
+window.scrollTo(0, 3500)
 const travelSlider = new Swiper(".travel__slider", {
   spaceBetween: 0,
-  loop: true,
+  // loop: true,
   slidesPerView: 1,
   // slideActiveClass: 2,
   //
-  initialSlide: 6,
+  initialSlide: 0,
+  effect: "fade",
   // slideToClickedSlide: true,
   centeredSlides: true,
   // parallax: true,
@@ -18,7 +19,7 @@ const travelSlider = new Swiper(".travel__slider", {
   // },
 
   navigation: {
-    nextEl: ".surf__slider-next",
-    prevEl: ".surf__slider-prev",
+    nextEl: ".travel__slider-next",
+    prevEl: ".travel__slider-prev",
   },
 });

@@ -75,8 +75,7 @@ function getStartPopupPosition() {
   const popupWidth = popupRect.width;
   const popupHeight = popupRect.height;
 
-  let left =
-    startDotRec.left + startDotRec.width / 2 - popupWidth / 2 - mapRect.left;
+  let left = startDotRec.left + startDotRec.width / 2 - popupWidth / 2 - mapRect.left;
   let top = startDotRec.top - popupHeight * 2 - 10 - mapRect.top;
   weatherPopup.style.position = "absolute";
   weatherPopup.style.left = `${left}px`;
@@ -175,7 +174,7 @@ renderPopup();
 surfSlider.on("slideChange", () => {
   const currentIndex = surfSlider.realIndex;
 
-  // console.log(currentIndex);
+  //  console.log(currentIndex);
   
 });
 
