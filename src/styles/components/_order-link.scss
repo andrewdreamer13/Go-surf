@@ -1,5 +1,4 @@
 .order-link {
-  position: absolute;
    //width: 100%;
    max-width: 277px;
   // max-width: clamp(210px, 11.6023rem + 7.6136vw, 277px);
@@ -36,10 +35,10 @@
   }
 
   &__devider {
-    // display: inline-block;
-    // width: 20px;
+    margin: 15px 0;
     width: clamp(10px, 0.3977rem + 1.1364vw, 20px);
     height: 1px;
+    color: rgba($text-color, 0.3);
     background-color: $text-color;
   }
 

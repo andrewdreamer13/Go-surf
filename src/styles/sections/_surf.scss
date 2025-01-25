@@ -225,7 +225,7 @@
     // font-size: 18px;
     font-size: clamp(14px, 0.7841rem + 0.4545vw, 18px);
     line-height: 1.22222;
-    letter-spacing: clamp(2px, 0rem + 0.625vw, 7.5px);
+    letter-spacing: clamp(2px, 0.625vw, 7.5px);
   }
 
   &__card-subtitle-devider {
@@ -234,8 +234,8 @@
   }
 
   &__card-link {
+    position: absolute;
     bottom: 0;
-    // left: 45px;
     left: clamp(25px, 1.108rem + 2.2727vw, 45px);
     translate: -200px 0 0;
     opacity: 0;
