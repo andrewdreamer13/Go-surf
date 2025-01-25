@@ -1,8 +1,6 @@
-
-
 .travel {
   width: 100%;
-  border:1px solid red;
+  // border:1px solid red;
   padding-top: clamp(40px, 0.7143rem + 8.9286vw, 140px);
   padding-bottom: clamp(40px, -0.5769rem + 15.3846vw, 160px);
   background-color: $bg-color;
@@ -12,13 +10,50 @@
   &__slider {
     position: relative;
     width: 100%;
-    border:1px solid rgb(12, 48, 207);
+    // height: 785px;
+    // aspect-ratio: 1.4 / 1;
+    border: 1px solid rgb(191, 207, 12);
+
+    .swiper-slide {
+      &-active {
+        .travel__slider-title {
+          translate: 0 0 0;
+          opacity: 1;
+          transition: all 0.7s;
+        }
+        .travel__slide-subtitle {
+          translate: 0 0 0;
+          opacity: 1;
+          transition: all 0.7s;
+          transition-delay: 0.1s;
+        }
+
+        .travel__slider-airplane-box {
+          translate: 0 0 0;
+          opacity: 1;
+          transition: all 0.7s;
+          // transition-delay: .3s;
+        }
+
+        .travel__slider-bg-box {
+          opacity: 1;
+          transition: all 0.7s;
+        }
+
+        .travel__slider-bg {
+          scale: 100%;
+          transition: all 0.7s;
+        }
+      }
+    }
   }
 
   &__slider-control {
     position: absolute;
     top: 190px;
+    top: clamp(80px, 2.5rem + 12.5vw, 190px);
     right: 90px;
+    right: clamp(30px, 0.5114rem + 6.8182vw, 90px);
   }
 
   &__slider-track {
@@ -30,30 +65,51 @@
 
   &__slider-title-box {
     position: absolute;
-    top: 76px;
-    right: 90px;
+    // top: 76px;
+    top: clamp(26px, 0.4886rem + 5.6818vw, 76px);
+    // right: 90px;
+    right: clamp(30px, 0.5114rem + 6.8182vw, 90px);
     text-align: right;
     z-index: 2;
   }
 
   &__slide-subtitle {
+    translate: -200px 0 0;
+    opacity: 0;
   }
 
   &__slider-title {
-    @include flex-mix(space-between,center,row);
-    border:1px solid red;
-
+    translate: 500px 0 0;
+    opacity: 0;
+    @include flex-mix(space-between, center, row);
   }
 
   &__slider-airline-box {
     position: absolute;
-    left: 128px;
-    bottom: 34px;
+    // left: 128px;
+    left: clamp(30px, -0.3523rem + 11.1364vw, 128px);
+    // bottom: 34px;
+    bottom: clamp(20px, 0.9318rem + 1.5909vw, 34px);
     z-index: 2;
+
+    .travel__slide-subtitle {
+      translate: 200px 0 0;
+      opacity: 0;
+    }
+
+    .travel__slider-title {
+      translate: -500px 0 0;
+      opacity: 0;
+      @include flex-mix(flex-start, center, row);
+
+      .slider-title__text:last-of-type {
+        margin-right: 26px;
+      }
+    }
   }
 
   &__slider-airline-img {
-    margin-left: 26px;
+    // margin-left: 26px;
   }
 
   &__slider-bg-box {
@@ -62,29 +118,33 @@
     max-width: 1115px;
     aspect-ratio: 1.42 / 1;
     background-color: $bg-color;
+    opacity: 0;
+    transform-origin: center;
     overflow: hidden;
-
+    border-right: 3px solid $bg-color;
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       z-index: 1;
-      box-shadow: inset -50px 50px 30px 10px rgba(23,25,25,1),
-      inset 0 -50px 30px 10px rgba(23,25,25,1),
-      inset -180px 150px 110px 20px rgba(23,25,25,1),
-       inset 0 -150px 120px 20px rgba(23,25,25,1);
+      box-shadow: 0 0 20px 10px $bg-color,
+        inset -50px 50px 30px 10px $bg-color,
+        inset 0 -50px 30px 10px $bg-color,
+        inset -180px 150px 110px 20px $bg-color,
+        inset 0 -150px 120px 20px $bg-color;
     }
   }
 
   &__slider-bg {
     width: 100%;
-    // height: 100%;
+    height: 100%;
     object-fit: cover;
-    scale: 130%;
-    transition: scale .7s;
+    scale: 150%;
+    font-size: 0;
+    line-height: 0;
   }
 
   &__slider-airplane-box {
@@ -92,13 +152,13 @@
     bottom: -68px;
     right: -50px;
     width: 100%;
-    max-width: 750px;
+    // max-width: 750px;
+    max-width: clamp(200px, 62.5vw, 750px);
     aspect-ratio: 3 / 1;
     z-index: 2;
-    // translate: 100% 50% 0;
+    translate: 100% 50% 0;
     opacity: 0;
-    transition: opacity .3s; 
-    
+    transition: opacity 0.3s;
   }
 
   &__slider-airplane {
@@ -111,7 +171,6 @@
 .swiper {
 }
 .slider-control {
-
   &__slider-next {
   }
 
@@ -123,26 +182,69 @@
 }
 .swiper-wrapper {
 }
-.swiper-slide {
-  &-active {
-    .travel__slider-bg {
-      width: 100%;
-      height: 100%;
-      scale: 100%;
-      transition: scale .7s;
-    }
 
-    .travel__slider-airplane-box {
-      // translate: 0 0 0;
-      opacity: 1;
-      transition: all .7s;
-      transition-delay: .3s; 
-      
+@media (max-width: 1439px) {
+  .travel {
+    &__slider-airplane-box {
+      bottom: 50px;
+      right: -20px;
     }
   }
 }
-.headline-left {
+
+@media (max-width: 1200px) {
+  .travel {
+    &__slider-bg-box {
+      // width: 80%;
+    }
+  }
 }
 
-.headline-right {
+@media (max-width: 950px) {
+  .travel {
+    &__slider-bg-box {
+      height: 670px;
+      // min-height: 100dvh;
+      aspect-ratio: 1 / 1;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .travel {
+    &__slider-bg-box {
+      &::after {
+        content: "";
+        box-shadow: 0 0 10px 10px $bg-color,
+          inset -40px 40px 40px 10px $bg-color,
+          inset 0 -40px 40px 10px $bg-color,
+          inset -90px 75px 110px 10px $bg-color,
+          inset 0 -75px 120px 10px $bg-color;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .travel {
+    &__slider-airplane-box {
+      bottom: 100px;
+      right: -20px;
+    }
+    &__slider-title {
+      flex-wrap: wrap;
+    }
+
+    &__slider-bg-box {
+      &::after {
+        content: "";
+        box-shadow: 0 0 10px 10px $bg-color,
+          inset -30px 30px 30px 10px $bg-color,
+          inset 0 -30px 30px 10px $bg-color,
+          inset -60px 55px 110px 10px $bg-color,
+          inset 0 -55px 120px 10px $bg-color;
+      }
+    }
+
+  }
 }

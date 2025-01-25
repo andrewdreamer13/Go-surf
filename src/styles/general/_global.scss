@@ -12,6 +12,13 @@ body{
   overflow-x: hidden;
 }
 
+.wrapper {
+  width: 100%;
+  max-width: 1950px;
+  padding: 0 15px;
+  overflow: hidden;
+}
+
 .title {
   // margin-left: -50px;
   margin-left: -4.034%;
