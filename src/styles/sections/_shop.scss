@@ -1,0 +1,20 @@
+.shop {
+  width: 100%;
+  border: 1px solid rgb(38, 8, 230);
+  padding-top: clamp(40px, -0.5769rem + 15.3846vw, 160px);
+  padding-bottom: clamp(40px, -0.5769rem + 15.3846vw, 160px);
+  // background-color: $bg-color;
+  // background-image: url('../img/shop/shop-bg.webp');
+  // background-size: contain;
+  // background-position: center right;
+  // background-repeat: no-repeat;
+  .swiper {
+    width: 300px;
+    border:1px solid red;
+    background-color: #1777aa;
+  }
+  
+}
+.shop__card {
+  width: 250px;
+}
