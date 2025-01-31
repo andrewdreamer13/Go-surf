@@ -7,26 +7,26 @@ const shopSlider = new Swiper(".shop__slider", {
   slidesPerView: 1,
   // slideActiveClass: 2,
   //
-  initialSlide: 5,
+  // initialSlide: 5,
   // effect: "fade",
    //effect: "cards",
   // grabCursor: true,
   slideToClickedSlide: true,
-  grabCursor: true,
+  // grabCursor: true,
   effect: "creative",
   creativeEffect: {
     prev: {
-      shadow: true,
+      // shadow: true,
       translate: ["-120%", 0, -500],
     },
     next: {
-      shadow: true,
+      // shadow: true,
       translate: ["120%", 0, -500],
     },
   },
   centeredSlides: true,
   // parallax: true,
-  speed: 700,
+  speed: 1000,
 
   // pagination: {
   //   el: ".header__pagination",
