@@ -26,7 +26,7 @@ const shopSlider = new Swiper(".shop__slider", {
   },
   centeredSlides: true,
   // parallax: true,
-  speed: 1000,
+  speed: 700,
 
   // pagination: {
   //   el: ".header__pagination",
