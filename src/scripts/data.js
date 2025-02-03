@@ -188,3 +188,60 @@ export const flights = [
     id: 8
   },
 ]
+
+export const surfs = [
+  {
+    model: 'north nugget tt',
+    rating: 5,
+    price: 799,
+    id: 0
+  },
+  {
+    model: 'gyzel ghost',
+    rating: 4,
+    price: 699,
+    id: 1
+  },
+  {
+    model: 'channel islands mid twin',
+    rating: 4.5,
+    price: 899,
+    id: 2
+  },
+  {
+    model: 'firewire machadocado',
+    rating: 3.5,
+    price: 599,
+    id: 3
+  },
+  {
+    model: 'thunderbolt harley ingleby ',
+    rating: 4.7,
+    price: 799,
+    id: 4
+  },
+  {
+    model: 'dark arts x tomo evo remastered',
+    rating: 5,
+    price: 999,
+    id: 5
+  },
+  {
+    model: 'form surfboards mod pro',
+    rating: 4.2,
+    price: 599,
+    id: 6
+  },
+  {
+    model: 'lost surfboards RNF 96',
+    rating: 3.3,
+    price: 499,
+    id: 7
+  },
+  {
+    model: 'channel islands febs fish',
+    rating: 4.3,
+    price: 699,
+    id: 8
+  },
+]
