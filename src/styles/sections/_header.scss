@@ -20,7 +20,7 @@
     height: 100dvh;
     // min-height: 1024px;
     background-color: $bg-color;
-    background-size: 150%;
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     overflow: hidden;
@@ -36,17 +36,17 @@
       z-index: 0;
     }
   }
-  .swiper {
-    .swiper-slide {
-      &-active {
-        .header__slide {
-          background-color: $bg-color;
-          background-size: 100%;
-          transition: all 0.7s;
-        }
-      }
-    }
-  }
+  // .swiper {
+  //   .swiper-slide {
+  //     &-active {
+  //       .header__slide {
+  //         background-color: $bg-color;
+  //         background-size: 100%;
+  //         transition: all 0.7s;
+  //       }
+  //     }
+  //   }
+  // }
 
   &__slide-map {
     position: absolute;
