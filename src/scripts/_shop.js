@@ -38,7 +38,6 @@ const shopSlider = new Swiper(".shop__slider", {
   },
 });
 
-window.scrollTo(0, 6600);
 
 const shopModel = document.querySelector("#shop-model");
 const shopRating = document.querySelector("#shop-rating");
@@ -98,3 +97,44 @@ function updateBtnsState() {
     frontBtn.classList.add("shop__card-btn-active");
   }
 }
+
+const shopInner = document.querySelector('.shop__inner');
+const shopDots = document.querySelectorAll('.shop__card-dot');
+const tooltip = document.getElementById('dot-tooltip');
+const tooltipText = document.getElementById('dot-info');
+
+shopDots.forEach((dot) => {
+  dot.addEventListener('click', function (event) {
+    event.stopPropagation();
+    shopDots.forEach((dot) => {
+      dot.classList.remove('shop__card-dot-active')
+    })
+    dot.classList.add('shop__card-dot-active')
+    tooltip.style.display = 'flex';
+    tooltipText.textContent = dot.getAttribute('data-dot');
+
+    const dotRect = this.getBoundingClientRect();
+    const tooltipRect = tooltip.getBoundingClientRect();
+    const shopInnerRect = shopInner.getBoundingClientRect();
+    
+    tooltip.style.top = `${dotRect.top - shopInnerRect.top - tooltipRect.height / 2 + 10}px`;
+    tooltip.style.left = `${dotRect.right + 5 }px`;
+
+    if (tooltipRect.left < 0) {
+      tooltip.style.left = '10px';
+    } else if (tooltipRect.right > window.innerWidth) {
+      tooltip.style.left = `${window.innerWidth - tooltipRect.width - 10}px`;
+    }
+  })
+})
+
+document.addEventListener('click', function(event) {
+  if (!event.target.classList.contains('shop__card-dot')) {
+    shopDots.forEach((dot) => {
+      dot.classList.remove('shop__card-dot-active')
+    })
+
+   
+    tooltip.style.display = 'none';
+  }
+});

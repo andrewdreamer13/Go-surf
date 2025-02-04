@@ -36,3 +36,13 @@
     }
   }
 }
+
+@media (max-width:480px) {
+  .slider-control {
+    width: 65px;
+    &__arrow-svg {
+      width: 18px;
+      height: 15px;
+    }
+  }
+}

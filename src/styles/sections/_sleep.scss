@@ -1,6 +1,5 @@
 .sleep {
   width: 100%;
-  border: 1px solid rgb(8, 230, 56);
   padding-top: clamp(40px, -0.5769rem + 15.3846vw, 160px);
   padding-bottom: clamp(40px, -0.5769rem + 15.3846vw, 160px);
   background-color: $bg-color;
@@ -26,7 +25,6 @@
 
     // height: 785px;
     // aspect-ratio: 1.4 / 1;
-    border: 1px solid rgb(191, 207, 12);
 
     .swiper-slide {
       &-active {
